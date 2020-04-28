@@ -1,0 +1,51 @@
+<%- include('header') -%>
+<!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+      <!--Content-->
+      <div class="modal-content">
+  
+        <!--Modal cascading tabs-->
+        <div class="modal-c-tabs">
+  
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs md-tabs tabs-2 light-blue " role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+                Bejelentkezés</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                Regisztráció</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#panel9" role="tab"><i class="fas fa-user-shield mr-1"></i>
+                Elfelejtett</a>
+            </li>
+          </ul>
+  
+          <!-- Tab panels -->
+          <div class="tab-content">
+            <!--Panel 7-->
+            <%- include('user/login') -%>
+            <!--/.Panel 7-->
+  
+            <!--Panel 8-->
+            <%- include('user/register') -%>
+            <!--/.Panel 8-->
+            <!--Panel 9-->
+            <%- include('user/forgot') -%>
+            <!--/.Panel 9-->
+          </div>
+  
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!--Modal: Login / Register Form-->
+  
+  <div class="text-center">
+    <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Kezdjük!</a>
+  </div>
+<%- include('footer') -%>
