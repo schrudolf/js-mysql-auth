@@ -1,8 +1,11 @@
-const app = require("express")();
+const express = require("express");
+const app = express();
 const con = require("./db/connect");
 
 require('dotenv').config();
 app.set('view engine', 'ejs');
+app.use(express.static('files'))
+app.use(express.urlencoded({ extended: true }))
 
 //Database connect
 con.connect((err) =>{
