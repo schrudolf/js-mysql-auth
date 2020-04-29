@@ -1,22 +1,23 @@
 <div class="tab-pane fade" id="panel8" role="tabpanel">
-  
+
+  <form action="/register" method="POST">
     <!--Body-->
     <div class="modal-body">
       <div class="md-form form-sm mb-5">
         <i class="fas fa-envelope prefix"></i>
-        <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+        <input name="email" type="email" id="modalLRInput12" class="form-control form-control-sm validate">
         <label data-error="wrong" data-success="right" for="modalLRInput12">E-mail címed</label>
       </div>
 
       <div class="md-form form-sm mb-5">
         <i class="fas fa-lock prefix"></i>
-        <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+        <input name="password" type="password" id="modalLRInput13" class="form-control form-control-sm validate">
         <label data-error="wrong" data-success="right" for="modalLRInput13">Jelszó</label>
       </div>
 
       <div class="md-form form-sm mb-4">
         <i class="fas fa-lock prefix"></i>
-        <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+        <input name="password2" type="password" id="modalLRInput14" class="form-control form-control-sm validate">
         <label data-error="wrong" data-success="right" for="modalLRInput14">Jelszó újra</label>
       </div>
 
@@ -25,6 +26,7 @@
       </div>
 
     </div>
+  </form>
     <!--Footer-->
     <div class="modal-footer">
       <div class="options text-right">
@@ -32,4 +34,5 @@
       </div>
       <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Vissza</button>
     </div>
+  
   </div>
