@@ -2,46 +2,19 @@
 <!-- <div class="tab-pane fade" id="panel8" role="tabpanel"> -->
 <div class="container form bg-light mt-3">
   <div class="row">
-    <div class="container">
-      <div class="row d-flex justify-content-center">
+    <div class="login">
+      <h1>Regisztráció</h1>
         <form action="/register" method="POST">
-          <!--Body-->
-            <div class="md-form form-sm mb-5">
-              <i class="fas fa-envelope prefix"></i>
-              <input name="email" type="email" id="input01" class="form-control form-control-sm validate">
-              <label data-error="wrong" data-success="right" for="input01">E-mail címed</label>
-            </div>
-      
-            <div class="md-form form-sm mb-5">
-              <i class="fas fa-lock prefix"></i>
-              <input name="password" type="password" id="input02" class="form-control form-control-sm validate">
-              <label data-error="wrong" data-success="right" for="input02">Jelszó</label>
-            </div>
-      
-            <div class="md-form form-sm mb-4">
-              <i class="fas fa-lock prefix"></i>
-              <input name="password2" type="password" id="input03" class="form-control form-control-sm validate">
-              <label data-error="wrong" data-success="right" for="input03">Jelszó újra</label>
-            </div>
-      
-            <div class="text-center form-sm mt-2">
-              <button class="btn btn-dark">Regisztráció <i class="fas fa-sign-in ml-1"></i></button>
-            </div>
+          <input type="email" name="email" placeholder="E-mail címed" required="required" />
+            <input type="password" name="password" placeholder="Jelszó" required="required" />
+            <input type="password" name="password2" placeholder="Jelszó újra" required="required" />
+            <button type="submit" class="btn btn-primary btn-block btn-large mb-3">Regisztráció</button>
         </form>
-      </div>
+        <div>
+          <span>Van már felhasználód? </span><a href="/login"> Bejelentkezés</a>
+        </div>
+        <%- include('../msg/msg') -%>
     </div>
   </div>
 </div>
-<div class="container mt-2">
-  <%- include('../msg/msg') -%>
-</div>
-    <!-- Footer
-    <div class="modal-footer">
-      <div class="options text-right">
-        <p class="pt-1">Van már felhasználód? <a href="#panel7" data-toggle="tab" class="blue-text">Bejelentkezés</a></p>
-      </div>
-      <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Vissza</button>
-    </div>
-  
-  </div> -->
-  <%- include('../home/footer') -%>
+<%- include('../home/footer') -%>

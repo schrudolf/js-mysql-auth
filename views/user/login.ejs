@@ -1,28 +1,22 @@
-<div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-    <!--Body-->
-    <div class="modal-body mb-1">
-      <div class="md-form form-sm mb-5">
-        <i class="fas fa-envelope prefix"></i>
-        <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
-        <label data-error="wrong" data-success="right" for="modalLRInput10">E-mail címed</label>
-      </div>
-
-      <div class="md-form form-sm mb-4">
-        <i class="fas fa-lock prefix"></i>
-        <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
-        <label data-error="wrong" data-success="right" for="modalLRInput11">Jelszó</label>
-      </div>
-      <div class="text-center mt-2">
-        <button class="btn btn-info">Bejelentkezés<i class="fas fa-sign-in ml-1"></i></button>
-      </div>
+<%- include('../home/header') -%>
+<!-- <div class="tab-pane fade" id="panel8" role="tabpanel"> -->
+<div class="container form bg-light mt-3">
+  <div class="row">
+    <div class="login">
+      <h1>Bejelentkezés</h1>
+        <form action="/login" method="POST">
+          <input type="email" name="email" placeholder="E-mail címed" required="required" />
+            <input type="password" name="password" placeholder="Jelszó" required="required" />
+            <button type="submit" class="btn btn-primary btn-block btn-large mb-3">Bejelentkezés</button>
+        </form>
+        <div>
+          <span>Nincs még felhasználód? </span><a href="/register"> Regisztráció</a>
+        </div>
+        <div>
+          <span>Elfelejtetted jelszavad? </span><a href="/forgot"> Új jelszó</a>
+        </div>
+        <%- include('../msg/msg') -%>
     </div>
-    <!--Footer-->
-    <div class="modal-footer">
-      <div class="options text-center text-md-right mt-1">
-        <p>Nincs felhasználód? <a href="#panel8" data-toggle="tab" class="blue-text">Regisztráció</a></p>
-        <p>Elfelejtett <a href="#panel9" data-toggle="tab" class="blue-text">jelszó?</a></p>
-      </div>
-      <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Vissza</button>
-    </div>
-
   </div>
+</div>
+<%- include('../home/footer') -%>

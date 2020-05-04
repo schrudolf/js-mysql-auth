@@ -10,6 +10,14 @@ module.exports = function(app,con){
         res.render("user/register")
     })
 
+    app.get("/login", (req,res)=>{
+        res.render("user/login")
+    })
+
+    app.get("/forgot", (req,res)=>{
+        res.render("user/forgot")
+    })
+
     app.post("/register", 
     registerMw(con)
     );
