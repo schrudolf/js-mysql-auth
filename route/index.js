@@ -6,6 +6,10 @@ module.exports = function(app,con){
         res.render("home/home");
     });
 
+    app.get("/register", (req,res)=>{
+        res.render("user/register")
+    })
+
     app.post("/register", 
     registerMw(con)
     );
