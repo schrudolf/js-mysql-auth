@@ -1,41 +1,40 @@
 <%- include('../home/header') -%>
 <!-- <div class="tab-pane fade" id="panel8" role="tabpanel"> -->
-<div class="container bg-light mt-3">
-    <% errorMsg.forEach(msg => { %>
-      <p><%=msg%></p>
-    <% }) %>
-  <div class="row ">
-    <form action="/register" method="POST">
-      <!--Body-->
-      <div class="modal-body">
-        <div class="md-form form-sm mb-5">
-          <i class="fas fa-envelope prefix"></i>
-          <input name="email" type="email" id="modalLRInput12" class="form-control form-control-sm validate">
-          <label data-error="wrong" data-success="right" for="modalLRInput12">E-mail címed</label>
-        </div>
-  
-        <div class="md-form form-sm mb-5">
-          <i class="fas fa-lock prefix"></i>
-          <input name="password" type="password" id="modalLRInput13" class="form-control form-control-sm validate">
-          <label data-error="wrong" data-success="right" for="modalLRInput13">Jelszó</label>
-        </div>
-  
-        <div class="md-form form-sm mb-4">
-          <i class="fas fa-lock prefix"></i>
-          <input name="password2" type="password" id="modalLRInput14" class="form-control form-control-sm validate">
-          <label data-error="wrong" data-success="right" for="modalLRInput14">Jelszó újra</label>
-        </div>
-  
-        <div class="text-center form-sm mt-2">
-          <button class="btn btn-dark">Regisztráció <i class="fas fa-sign-in ml-1"></i></button>
-        </div>
-  
+<div class="container form bg-light mt-3">
+  <div class="row">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <form action="/register" method="POST">
+          <!--Body-->
+            <div class="md-form form-sm mb-5">
+              <i class="fas fa-envelope prefix"></i>
+              <input name="email" type="email" id="input01" class="form-control form-control-sm validate">
+              <label data-error="wrong" data-success="right" for="input01">E-mail címed</label>
+            </div>
+      
+            <div class="md-form form-sm mb-5">
+              <i class="fas fa-lock prefix"></i>
+              <input name="password" type="password" id="input02" class="form-control form-control-sm validate">
+              <label data-error="wrong" data-success="right" for="input02">Jelszó</label>
+            </div>
+      
+            <div class="md-form form-sm mb-4">
+              <i class="fas fa-lock prefix"></i>
+              <input name="password2" type="password" id="input03" class="form-control form-control-sm validate">
+              <label data-error="wrong" data-success="right" for="input03">Jelszó újra</label>
+            </div>
+      
+            <div class="text-center form-sm mt-2">
+              <button class="btn btn-dark">Regisztráció <i class="fas fa-sign-in ml-1"></i></button>
+            </div>
+        </form>
       </div>
-    </form>
-
+    </div>
   </div>
 </div>
-  
+<div class="container mt-2">
+  <%- include('../msg/msg') -%>
+</div>
     <!-- Footer
     <div class="modal-footer">
       <div class="options text-right">

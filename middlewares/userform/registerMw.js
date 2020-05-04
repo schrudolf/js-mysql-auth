@@ -1,4 +1,5 @@
 const Msg = require("../../Message/userForms");
+const bcrypt = require('bcryptjs');
 
 module.exports = (con) => {
     return async (req,res,next) => {
@@ -22,9 +23,19 @@ module.exports = (con) => {
             res.locals.errorMsg.push(Msg.existEmail);
             return res.render("user/register");
         }
-        con.query("INSERT INTO users SET ?", {email,password});
-        res.locals.errorMsg.push(Msg.successReg);
-        return res.render("user/register");
+        const newUser = {
+            email,
+            password
+        };
+        bcrypt.genSalt(10, (err,salt) => {
+            bcrypt.hash(newUser.password, salt, (err, hash) => {
+                if(err) throw err;
+                newUser.password = hash;
+                con.query("INSERT INTO users SET ?", newUser);
+                res.locals.successMsg.push(Msg.successReg);
+                return res.render("user/register");
+                });
+            }) 
     })
     };
 }
