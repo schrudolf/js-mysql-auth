@@ -64,8 +64,28 @@ input {
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
-/* FORMS */
+/* FORMS END */
 
 span {
   color: white;
 }
+
+/* ALERT MSG */
+
+.alert {
+	margin-top: 15px;
+	text-align: left;
+	font-weight: bold;
+	color: white;
+	border-radius: 15px;
+}
+
+.alert-danger {
+	background-color: #ad3034;
+}
+
+.alert-success {
+	background-color: #3aad30;
+}
+
+/* ALERT MSG END */

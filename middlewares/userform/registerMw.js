@@ -32,10 +32,11 @@ module.exports = (con) => {
                 if(err) throw err;
                 newUser.password = hash;
                 con.query("INSERT INTO users SET ?", newUser);
-                res.locals.successMsg.push(Msg.successReg);
-                return res.render("user/register");
+                res.locals.userEmail = newUser.email;
+                req.flash("success_msg", Msg.successReg);
+                return res.redirect("/login");
                 });
             }) 
-    })
+        })
     };
 }
