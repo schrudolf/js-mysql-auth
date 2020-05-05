@@ -34,7 +34,8 @@ module.exports = (con) => {
                 con.query("INSERT INTO users SET ?", newUser);
                 res.locals.userEmail = newUser.email;
                 req.flash("success_msg", Msg.successReg);
-                return res.redirect("/login");
+                res.redirect("/login");
+                return next();
                 });
             }) 
         })
