@@ -6,6 +6,7 @@ module.exports = {
     successReg: "Sikeres regisztráció! Most már bejelentkezhetsz!",
     emailNotExist: "Nincs regisztráció ilyen email címmel",
     badPwd: "A jelszó nem eggyezik",
-    successLogin: "Sikeresen bejelentkezél!"
+    successLogin: "Sikeresen bejelentkezél!",
+    checkUserLogin: "Ez az oldal csak bejelentkezés után elérhető!"
 
 }

@@ -19,6 +19,7 @@ module.exports = (con) => {
             try{
                 if(await bcrypt.compare(password, user[0].password)){
                     req.flash("success_msg", Msg.successLogin);
+                    req.session.logged = true;
                     return res.redirect("/home");
                 }else {
                 res.locals.errorMsg.push(Msg.badPwd);
