@@ -1,6 +1,7 @@
 const registerMw = require("../middlewares/userform/registerMw");
 const loginMw = require("../middlewares/userform/loginMw");
 const indexMw = require("../middlewares/content/index");
+const logoutMw = require("../middlewares/auth/logoutMw");
 
 // Auth
 const checkUserLoginMw = require("../middlewares/auth/checkUserLoginMw");
@@ -31,6 +32,9 @@ module.exports = function(app,con){
 
     app.post("/login", 
     loginMw(con));
+
+    app.get("/logout",
+    logoutMw());
 
     app.get("/home", 
     checkUserLoginMw(),

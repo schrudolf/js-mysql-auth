@@ -7,6 +7,7 @@ module.exports = {
     emailNotExist: "Nincs regisztráció ilyen email címmel",
     badPwd: "A jelszó nem eggyezik",
     successLogin: "Sikeresen bejelentkezél!",
-    checkUserLogin: "Ez az oldal csak bejelentkezés után elérhető!"
+    checkUserLogin: "Ez az oldal csak bejelentkezés után elérhető!",
+    successLogout: "Sikeresen kijelentkezél!"
 
 }
