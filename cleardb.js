@@ -23,7 +23,7 @@ async function userToken(con){
     try{
         await con.query("DROP TABLE IF EXISTS userToken");
         console.log("userToken tábla törölve");
-        const userToken = "CREATE TABLE IF NOT EXISTS userToken (id INT(11) NOT NULL AUTO_INCREMENT,userid INT(11) NOT NULL,token VARCHAR(100) NOT NULL,PRIMARY KEY (id))";
+        const userToken = "CREATE TABLE IF NOT EXISTS userToken (id INT(11) NOT NULL AUTO_INCREMENT,userid INT(11) NOT NULL,token VARCHAR(100) NOT NULL,expire VARCHAR(30) NOT NULL,PRIMARY KEY (id))";
         await con.query(userToken);
         console.log("userToken tábla kész!")
     }catch(err){

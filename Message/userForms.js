@@ -8,6 +8,7 @@ module.exports = {
     badPwd: "A jelszó nem egyezik",
     successLogin: "Sikeresen bejelentkezél!",
     checkUserLogin: "Ez az oldal csak bejelentkezés után elérhető!",
-    successLogout: "Sikeresen kijelentkezél!"
+    successLogout: "Sikeresen kijelentkezél!",
+    forgotPwEmail: "Elküldtük e-mailben a jelszó változtatáshoz szükséges adatokat!"
 
 }

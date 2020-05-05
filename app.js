@@ -39,7 +39,7 @@ app.use(function(req,res,next) {
 })
 
 // clear db
-require("./cleardb")(con);
+// require("./cleardb")(con);
 
 //Load routes
 require('./route/index')(app,con);

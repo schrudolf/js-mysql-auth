@@ -2,11 +2,12 @@ const registerMw = require("../middlewares/userform/registerMw");
 const loginMw = require("../middlewares/userform/loginMw");
 const indexMw = require("../middlewares/content/index");
 const logoutMw = require("../middlewares/auth/logoutMw");
+const forgotMw = require("../middlewares/userform/forgotMw");
 
 // Auth
 const checkUserLoginMw = require("../middlewares/auth/checkUserLoginMw");
 // Emails
-const sendSuccessreg = require("../middlewares/emails/sendSuccessReg");
+const sendSuccessReg = require("../middlewares/emails/sendSuccessReg");
 
 module.exports = function(app,con){
 
@@ -28,10 +29,13 @@ module.exports = function(app,con){
 
     app.post("/register", 
     registerMw(con),
-    sendSuccessreg());
+    sendSuccessReg());
 
     app.post("/login", 
     loginMw(con));
+
+    app.post("/forgot", 
+    forgotMw(con));
 
     app.get("/logout",
     logoutMw());
