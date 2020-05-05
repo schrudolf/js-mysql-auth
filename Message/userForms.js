@@ -3,6 +3,9 @@ module.exports = {
     pwdL: "Jelszó minimum 6 karakteres kell hogy legyen",
     noMatch: "Nem egyeznek a jelszavak",
     existEmail: "Ez az email már létezik",
-    successReg: "Sikeres regisztráció! Most már bejelentkezhetsz!"
+    successReg: "Sikeres regisztráció! Most már bejelentkezhetsz!",
+    emailNotExist: "Nincs regisztráció ilyen email címmel",
+    badPwd: "A jelszó nem eggyezik",
+    successLogin: "Sikeresen bejelentkezél!"
 
 }

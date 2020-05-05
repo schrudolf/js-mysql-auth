@@ -1,4 +1,5 @@
 const registerMw = require("../middlewares/userform/registerMw");
+const loginMw = require("../middlewares/userform/loginMw");
 
 // Emails
 const sendSuccessreg = require("../middlewares/emails/sendSuccessReg");
@@ -23,7 +24,13 @@ module.exports = function(app,con){
 
     app.post("/register", 
     registerMw(con),
-    sendSuccessreg()
-    );
+    sendSuccessreg());
+
+    app.post("/login", 
+    loginMw(con));
+
+    app.get("/home", (req,res)=>{
+        res.render("home/index");
+    })
 
 };
