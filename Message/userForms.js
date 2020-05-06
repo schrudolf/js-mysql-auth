@@ -9,6 +9,8 @@ module.exports = {
     successLogin: "Sikeresen bejelentkezél!",
     checkUserLogin: "Ez az oldal csak bejelentkezés után elérhető!",
     successLogout: "Sikeresen kijelentkezél!",
-    forgotPwEmail: "Elküldtük e-mailben a jelszó változtatáshoz szükséges adatokat!"
+    forgotPwEmail: "Elküldtük e-mailben a jelszó változtatáshoz szükséges adatokat!",
+    notFound: "Nem létező linket adtál meg!",
+    expired: "Lejárt! Kérlek igényelj újat ez a link törlésre kerül!"
 
 }

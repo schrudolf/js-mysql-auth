@@ -3,6 +3,7 @@ const loginMw = require("../middlewares/userform/loginMw");
 const indexMw = require("../middlewares/content/index");
 const logoutMw = require("../middlewares/auth/logoutMw");
 const forgotMw = require("../middlewares/userform/forgotMw");
+const reqToken = require("../middlewares/auth/reqTokenMw");
 
 // Auth
 const checkUserLoginMw = require("../middlewares/auth/checkUserLoginMw");
@@ -27,6 +28,9 @@ module.exports = function(app,con){
     app.get("/forgot", (req,res)=>{
         res.render("user/forgot")
     })
+
+    app.get("/forgot/:token",
+        reqToken(con))
 
     app.post("/register", 
     registerMw(con),

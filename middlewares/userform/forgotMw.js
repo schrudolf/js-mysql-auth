@@ -1,5 +1,5 @@
 const Msg = require("../../Message/userForms");
-const bcrypt = require('bcryptjs');
+const TokenGen = require('uuid-token-generator');
 
 module.exports = (con) => {
     return (req,res,next) => {
@@ -14,9 +14,9 @@ module.exports = (con) => {
                 return res.render("user/forgot");
             }
             try{
-                const token = await bcrypt.hashSync('secrettoken', 10);
-                const newToken = await token.replace(/\//g, '');
-                const dateNow = await Date.now() + 3600000; //1hour
+                const token = await new TokenGen(256, TokenGen.BASE62);
+                const newToken = await token.generate();
+                const dateNow = await Date.now() + 3600000; // 3600000 = 1hour
                 const newUserToken = {
                     userid: user[0].id,
                     token: newToken,

@@ -45,7 +45,7 @@ app.use(function(req,res,next) {
 require('./route/index')(app,con);
 
 const PORT = 3000;
-app.listen(PORT, process.env.IP_ADDRESS, () =>{
+app.listen(80, process.env.IP_ADDRESS, () =>{
     console.log(`Server Online | PORT: ${PORT}`);
 });
 
