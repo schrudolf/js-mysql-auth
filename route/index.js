@@ -8,6 +8,7 @@ const forgotMw = require("../middlewares/userform/forgotMw");
 const checkUserLoginMw = require("../middlewares/auth/checkUserLoginMw");
 // Emails
 const sendSuccessReg = require("../middlewares/emails/sendSuccessReg");
+const sendTokenEmail = require("../middlewares/emails/sendTokenEmail");
 
 module.exports = function(app,con){
 
@@ -35,7 +36,8 @@ module.exports = function(app,con){
     loginMw(con));
 
     app.post("/forgot", 
-    forgotMw(con));
+    forgotMw(con),
+    sendTokenEmail());
 
     app.get("/logout",
     logoutMw());

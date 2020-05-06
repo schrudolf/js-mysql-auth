@@ -24,7 +24,12 @@ module.exports = (con) => {
                 }
                 await con.query("INSERT INTO usertoken SET ?", newUserToken);
                 res.locals.successMsg.push(Msg.forgotPwEmail)
-                return res.render("user/forgot");
+                res.locals.userToken = {
+                    token: newToken,
+                    email: email
+                }
+                res.render("user/forgot");
+                return next();
             } catch(err){
                 console.log(err);
             }

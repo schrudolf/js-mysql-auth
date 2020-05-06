@@ -38,7 +38,7 @@ app.use(function(req,res,next) {
     next();
 })
 
-// clear db
+// clear db and load new
 // require("./cleardb")(con);
 
 //Load routes
