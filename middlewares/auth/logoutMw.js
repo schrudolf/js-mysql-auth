@@ -6,8 +6,10 @@ module.exports = () => {
             req.flash("success_msg", Msg.successLogout)
             res.redirect("/login");
             return setTimeout(function(){
-                return req.session.destroy();
+                req.session.destroy();
+                return next();
             },1000)
-        } return res.redirect("/login");
+        } res.redirect("/login");
+        return next();
     }
 }

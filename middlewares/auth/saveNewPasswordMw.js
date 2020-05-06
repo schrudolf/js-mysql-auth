@@ -35,10 +35,11 @@ module.exports = (con) => {
                             }else {
                                 con.query('DELETE FROM usertoken WHERE token=?', userToken[0].token);
                                 req.flash("success_msg", Msg.successPwChange);
-                                return res.redirect("/login");
-                            }
-                        });
-                        // return next();
+                                res.locals.userEmail = tokenUser[0].email;
+                                res.redirect("/login");
+                                return next();
+                                }
+                            });
                         });
                     })
             })

@@ -5,6 +5,6 @@ module.exports = () =>{
         if(!req.session.logged){
             req.flash("error_msg", Msg.checkUserLogin);
             return res.redirect("/login");
-        } next()
+        } return next();
     }
 }

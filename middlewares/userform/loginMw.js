@@ -23,7 +23,8 @@ module.exports = (con) => {
                     return res.redirect("/home");
                 }else {
                 res.locals.errorMsg.push(Msg.badPwd);
-                return res.render("user/login");
+                res.render("user/login");
+                return next();
                 }
             } catch (err) {
                 console.log(err);

@@ -11,6 +11,7 @@ const checkUserLoginMw = require("../middlewares/auth/checkUserLoginMw");
 // Emails
 const sendSuccessReg = require("../middlewares/emails/sendSuccessReg");
 const sendTokenEmail = require("../middlewares/emails/sendTokenEmail");
+const SuccessPwChange = require("../middlewares/emails/sendSuccessPwChange");
 
 module.exports = function(app,con){
 
@@ -34,24 +35,25 @@ module.exports = function(app,con){
         reqToken(con))
 
     app.post("/forgot/:token/new", 
-        saveNewPasswordMw(con))  
+        saveNewPasswordMw(con),
+        SuccessPwChange());  
 
     app.post("/register", 
-    registerMw(con),
-    sendSuccessReg());
+        registerMw(con),
+        sendSuccessReg());
 
     app.post("/login", 
-    loginMw(con));
+        loginMw(con));
 
     app.post("/forgot", 
-    forgotMw(con),
-    sendTokenEmail());
+        forgotMw(con),
+        sendTokenEmail());
 
     app.get("/logout",
-    logoutMw());
+        logoutMw());
 
     app.get("/home", 
-    checkUserLoginMw(),
-    indexMw(con));
+        checkUserLoginMw(),
+        indexMw(con));
 
 };

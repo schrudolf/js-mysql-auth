@@ -18,6 +18,7 @@ module.exports = (con) => {
                 return res.redirect("/forgot");
             }
                 res.render("user/newPw", {token: reqToken});
-        });     
+                return next();
+        });    
     }
 }
