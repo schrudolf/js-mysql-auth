@@ -1,23 +1,23 @@
 const express = require("express");
 const app = express();
+const helmet = require("helmet");
 const con = require("./db/connect");
 const flash = require('connect-flash');
 const session = require('express-session')
 
-
+app.use(helmet())
 require('dotenv').config();
 app.set('view engine', 'ejs');
 app.use(express.static('files'))
 app.use(express.urlencoded({ extended: true }));
 
-app.use(
-    session({
-        name: 'test cookie',
-        secret: process.env.SESSION_SECRET,
-        resave: true,
-        saveUninitialized: true,
-    })
-);
+// app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+  }))
 
 //Database connect
 con.connect((err) =>{

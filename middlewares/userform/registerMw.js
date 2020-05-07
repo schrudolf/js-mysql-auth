@@ -2,16 +2,16 @@ const Msg = require("../../Message/userForms");
 const bcrypt = require('bcryptjs');
 
 module.exports = (con) => {
-    return async (req,res,next) => {
+    return (req,res,next) => {
         const {email, password, password2} = req.body;
         if(!email | !password | !password2){
             res.locals.errorMsg.push(Msg.empty);
         }
-        if(password.length < 6){
-            res.locals.errorMsg.push(Msg.pwdL);
-        }
         if(password !== password2){
             res.locals.errorMsg.push(Msg.noMatch);
+        }
+        if(password.length < 6){
+            res.locals.errorMsg.push(Msg.pwdL);
         }
         if(res.locals.errorMsg.length > 0){
             return res.render("user/register");

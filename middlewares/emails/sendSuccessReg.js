@@ -15,7 +15,7 @@ module.exports = () => {
             to: res.locals.userEmail,
             subject: 'Sikeresen regisztráltál az oldalra!',
             html: '<h1>Sikeres regisztráció!</h1>' + `<p>Az oldalon regisztrált email: ${res.locals.userEmail}</p>` +
-            "<p>Most már bejelentkezhetsz:</p>" + '<span>http://' + process.env.IP_ADDRESS + "/ oldalon</span>"
+            "<p>Most már bejelentkezhetsz:</p>" + '<span>http://' + process.env.IP_ADDRESS + "/login oldalon</span>"
           };
           
           transporter.sendMail(mailOptions, function(error, info){
