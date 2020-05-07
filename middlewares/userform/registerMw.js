@@ -6,6 +6,7 @@ module.exports = (con) => {
         const {email, password, password2} = req.body;
         if(!email | !password | !password2){
             res.locals.errorMsg.push(Msg.empty);
+            return res.render("user/register");
         }
         if(password !== password2){
             res.locals.errorMsg.push(Msg.noMatch);

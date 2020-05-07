@@ -13,6 +13,7 @@ const sendSuccessReg = require("../middlewares/emails/sendSuccessReg");
 const sendTokenEmail = require("../middlewares/emails/sendTokenEmail");
 const SuccessPwChange = require("../middlewares/emails/sendSuccessPwChange");
 
+
 module.exports = function(app,con){
 
     app.get("/", (req,res) =>{

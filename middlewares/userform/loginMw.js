@@ -1,5 +1,6 @@
 const Msg = require("../../Message/userForms");
 const bcrypt = require('bcryptjs');
+const saveipAddress = require("../userform/checkIPandSave");
 
 module.exports = (con) => {
     return (req,res,next) => {
@@ -20,6 +21,7 @@ module.exports = (con) => {
                 if(await bcrypt.compare(password, user[0].password)){
                     req.flash("success_msg", Msg.successLogin);
                     req.session.logged = true;
+                    saveipAddress(con,email);
                     return res.redirect("/home");
                 }else {
                 res.locals.errorMsg.push(Msg.badPwd);

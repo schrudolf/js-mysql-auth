@@ -11,7 +11,7 @@ async function createUsers(con){
     try{
     await con.query("DROP TABLE IF EXISTS users");
     console.log("users tábla törölve")
-    const users = "CREATE TABLE IF NOT EXISTS users (id INT(11) NOT NULL AUTO_INCREMENT,email VARCHAR(50) NOT NULL, password VARCHAR(100) NOT NULL,PRIMARY KEY (id))";
+    const users = "CREATE TABLE IF NOT EXISTS users (id INT(11) NOT NULL AUTO_INCREMENT,email VARCHAR(50) NOT NULL, password VARCHAR(100) NOT NULL,ipAddress VARCHAR(30) NULL,PRIMARY KEY (id))";
     await con.query(users);
     console.log("Users tábla kész")
     }  catch(err) {
