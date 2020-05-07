@@ -6,7 +6,8 @@ module.exports = async (con,email) => {
             let userIp = await publicIp.v4();
             return userIp;
     })();
-    await con.query("UPDATE users SET ipAddress=? WHERE email=?", [ip,email])
+    const date = await new Date().toLocaleString()
+    await con.query("UPDATE users SET ipAddress=?, lastlogin=? WHERE email=?", [ip,date,email])
     return;
     } catch(err) {
         console.log(err);
