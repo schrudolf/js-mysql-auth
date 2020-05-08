@@ -19,9 +19,9 @@ module.exports = () => {
             + "</span><p>Link következő 1 órában aktív</p>"
           };
           
-          transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-              console.log(error);
+          transporter.sendMail(mailOptions, function(err, info){
+            if (err) {
+              return next(err);
             } else {
               console.log('Email sent: ' + info.response);
               return next();

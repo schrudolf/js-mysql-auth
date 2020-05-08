@@ -6,7 +6,7 @@ module.exports = (con) => {
         con.query('SELECT * FROM usertoken WHERE token=? LIMIT 1', reqToken, (err,userToken)=>{
             if(err){
                 res.redirect("/forgot");
-               return console.log(err);
+               return next(err);
             }
             if(userToken.length === 0){
                 req.flash("error_msg", Msg.notFound);

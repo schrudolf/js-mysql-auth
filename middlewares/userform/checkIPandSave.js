@@ -10,6 +10,6 @@ module.exports = async (con,email) => {
     await con.query("UPDATE users SET ipAddress=?, lastlogin=? WHERE email=?", [ip,date,email])
     return;
     } catch(err) {
-        console.log(err);
+        return next(err);
     }
 }

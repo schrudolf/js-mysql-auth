@@ -31,7 +31,7 @@ module.exports = (con) => {
                 res.render("user/forgot");
                 return next();
             } catch(err){
-                console.log(err);
+                return next(err);
             }
         }) 
     }

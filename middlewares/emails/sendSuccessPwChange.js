@@ -18,9 +18,9 @@ module.exports = () => {
             "<p>Most már bejelentkezhetsz az új jelszóval: </p>" + '<span>http://' + process.env.IP_ADDRESS + "/login oldalon</span>"
           };
           
-          transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-              console.log(error);
+          transporter.sendMail(mailOptions, function(err, info){
+            if (err) {
+              return next(err);
             } else {
               console.log('Email sent: ' + info.response);
               return next();

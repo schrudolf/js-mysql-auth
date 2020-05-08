@@ -11,7 +11,7 @@ module.exports = (con) => {
         }
         con.query("SELECT * FROM users WHERE email=? LIMIT 1", email, async (err,user) =>{
             if(err){
-                console.log(err);
+                return next(err);
             }
             if(user.length === 0){
                 res.locals.errorMsg.push(Msg.emailNotExist);
@@ -21,15 +21,15 @@ module.exports = (con) => {
                 if(await bcrypt.compare(password, user[0].password)){
                     req.flash("success_msg", Msg.successLogin);
                     req.session.logged = true;
-                    saveipAddress(con,email);
+                    saveipAddress(con,email); //Check ip and save DB
                     return res.redirect("/home");
                 }else {
                 res.locals.errorMsg.push(Msg.badPwd);
                 res.render("user/login");
                 return next();
                 }
-            } catch (err) {
-                console.log(err);
+            } catch(err) {
+                return next(err);
             }
         })
     }

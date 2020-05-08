@@ -19,7 +19,7 @@ module.exports = (con) => {
         }
         con.query(`SELECT * FROM users WHERE email="${email}"`, (err, checkEmail)=>{
         if(err){
-            return console.log(err);
+            return next(err);
         } if(checkEmail.length > 0){
             res.locals.errorMsg.push(Msg.existEmail);
             return res.render("user/register");
@@ -30,7 +30,9 @@ module.exports = (con) => {
         };
         bcrypt.genSalt(10, (err,salt) => {
             bcrypt.hash(newUser.password, salt, (err, hash) => {
-                if(err) throw err;
+                if(err) { 
+                   return next(err); 
+                }
                 newUser.password = hash;
                 con.query("INSERT INTO users SET ?", newUser);
                 res.locals.userEmail = newUser.email;

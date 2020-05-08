@@ -4,6 +4,7 @@ const helmet = require("helmet");
 const con = require("./db/connect");
 const flash = require('connect-flash');
 const session = require('express-session')
+const fs = require("fs");
 
 app.use(helmet())
 require('dotenv').config();
@@ -43,6 +44,21 @@ app.use(function(req,res,next) {
 
 //Load routes
 require('./route/index')(app,con);
+
+app.use(async function (err, req, res, next) {
+    try{
+        const date = await new Date().toLocaleString()
+        res.status(500).send('Hiba történt!')
+        await fs.appendFile("./logs/error.log",
+        `\r\n \r\n>>>> Hiba történt: ${date} <<<<<< \r\n \r\n ${err} \r\n ${err.stack} `, function(err) {
+            if (err) throw err;
+            console.log('Hiba töntént! Elmentve: logs/error.log fájlba');
+          });
+        return next();
+    } catch(err){
+        return next(err);
+    }
+  })
 
 const PORT = 3000;
 app.listen(80, process.env.IP_ADDRESS, () =>{
