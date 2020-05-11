@@ -1,17 +1,19 @@
 <%- include('../home/header') -%>
-<div class="container form bg-light mt-3">
-  <div class="row">
-    <div class="login">
-      <h1>Új jelszó</h1>
-        <form action="/forgot/<%= token %>/new" method="POST">
-          <input type="password" name="password" placeholder="Új jelszó" autocomplete="off" required="required" />
-          <input type="password" name="password2" placeholder="Új jelszó újra" autocomplete="off" required="required" />
-            <button type="submit" class="btn btn-primary btn-block btn-large mb-3">Küldés</button>
-        </form>
-        <div>
-          <a href="/">Vissza</a>
-        </div>
-        <%- include('../msg/msg') -%>
+<div class="form-body">
+  <div class="container form bg-light mt-3">
+    <div class="row">
+      <div class="login">
+        <h1>Új jelszó</h1>
+          <form action="/forgot/<%= token %>/new" method="POST">
+            <input type="password" name="password" placeholder="Új jelszó" autocomplete="off" required="required" />
+            <input type="password" name="password2" placeholder="Új jelszó újra" autocomplete="off" required="required" />
+              <button type="submit" class="btn btn-primary btn-block btn-large mb-3">Küldés</button>
+          </form>
+          <div>
+            <a href="/">Vissza</a>
+          </div>
+          <%- include('../msg/msg') -%>
+      </div>
     </div>
   </div>
 </div>

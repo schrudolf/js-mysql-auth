@@ -1,16 +1,18 @@
 <%- include('../home/header') -%>
-<div class="container form bg-light mt-3">
-  <div class="row">
-    <div class="login">
-      <h1>Elfelejtett jelszó</h1>
-        <form action="/forgot" method="POST">
-          <input type="email" name="email" placeholder="E-mail címed" required="required" />
-            <button type="submit" class="btn btn-primary btn-block btn-large mb-3">Küldés</button>
-        </form>
-        <div>
-          <a href="/login"> Vissza</a>
-        </div>
-        <%- include('../msg/msg') -%>
+<div class="form-body">
+  <div class="container form bg-light mt-3">
+    <div class="row">
+      <div class="login">
+        <h1>Elfelejtett jelszó</h1>
+          <form action="/forgot" method="POST">
+            <input type="email" name="email" placeholder="E-mail címed" required="required" />
+              <button type="submit" class="btn btn-primary btn-block btn-large mb-3">Küldés</button>
+          </form>
+          <div>
+            <a href="/login"> Vissza</a>
+          </div>
+          <%- include('../msg/msg') -%>
+      </div>
     </div>
   </div>
 </div>

@@ -22,7 +22,7 @@ module.exports = (con) => {
                     req.flash("success_msg", Msg.successLogin);
                     req.session.logged = true;
                     saveipAddress(con,email); //Check ip and save DB
-                    return res.redirect("/home");
+                    return res.redirect("/user/index");
                 }else {
                 res.locals.errorMsg.push(Msg.badPwd);
                 res.render("user/login");

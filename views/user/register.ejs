@@ -1,18 +1,20 @@
 <%- include('../home/header') -%>
-<div class="container form bg-light mt-3">
-  <div class="row">
-    <div class="login">
-      <h1>Regisztráció</h1>
-      <form action="/register" method="POST">
-        <input type="email" name="email" placeholder="E-mail címed" required="required" />
-        <input type="password" name="password" placeholder="Jelszó" autocomplete="off" required="required" />
-        <input type="password" name="password2" placeholder="Jelszó újra" autocomplete="off" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large mb-3">Regisztráció</button>
-      </form>
-      <div>
-        <span>Van már felhasználód? </span><a href="/login"> Bejelentkezés</a>
+<div class="form-body">
+  <div class="container form bg-light mt-3">
+    <div class="row">
+      <div class="login">
+        <h1>Regisztráció</h1>
+        <form action="/register" method="POST">
+          <input type="email" name="email" placeholder="E-mail címed" required="required" />
+          <input type="password" name="password" placeholder="Jelszó" autocomplete="off" required="required" />
+          <input type="password" name="password2" placeholder="Jelszó újra" autocomplete="off" required="required" />
+          <button type="submit" class="btn btn-primary btn-block btn-large mb-3">Regisztráció</button>
+        </form>
+        <div>
+          <span>Van már felhasználód? </span><a href="/login"> Bejelentkezés</a>
+        </div>
+        <%- include('../msg/msg') -%>
       </div>
-      <%- include('../msg/msg') -%>
     </div>
   </div>
 </div>
